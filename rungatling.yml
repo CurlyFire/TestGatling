@@ -14,7 +14,7 @@
     
   - name: Mettre a jour l'image Docker
     docker_image: 
-      name: "inspq/testgatling"
+      name: "nexus3.inspq.qc.ca:5000/inspq/testgatling"
       tag: "latest"
       pull: true
       state: present
@@ -23,7 +23,7 @@
   - name: Creation du conteneur
     docker_container:
       name: "containertestgatling"
-      image: "inspq/testgatling"
+      image: "nexus3.inspq.qc.ca:5000/inspq/testgatling"
       state: started
       cleanup: true
       detach: false
