@@ -25,6 +25,4 @@
       name: "containertestgatling"
       image: "nexus3.inspq.qc.ca:5000/inspq/testgatling"
       state: started
-      cleanup: true
-      detach: false
       volumes: "/tmp/gatling/results:/opt/gatling/results"
