@@ -1,0 +1,6 @@
+# Paramètres de configuration Winrm
+#ansible_user: ansible@INSPQ.QC.CA
+#ansible_password: Mot_de_Passe
+#ansible_port: 5986
+#ansible_connection: winrm
+#ansible_winrm_server_cert_validation: ignore
