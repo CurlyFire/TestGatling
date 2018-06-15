@@ -1,0 +1,29 @@
+---
+- hosts: app
+  vars:
+    docker_registry: nexus3.inspq.qc.ca:5000
+  
+  roles:
+  - docker-engine
+      
+  tasks:
+
+  - name: Docker repository logon
+    shell: docker login -u {{ docker_registry_username }} -p  {{ docker_registry_password }} -e {{ docker_registry_email }} {{ docker_registry }}
+    when: docker_registry_username is defined and docker_registry_password is defined and docker_registry_email is defined
+    
+  - name: Mettre a jour l'image Docker
+    docker_image: 
+      name: "inspq/testgatling"
+      tag: "latest"
+      pull: true
+      state: present
+      force: yes
+      
+  - name: Creation du conteneur
+    docker_container:
+      name: "containertestgatling"
+      image: "inspq/testgatling"
+      state: started
+      cleanup: true
+      detach: false
