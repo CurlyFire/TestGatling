@@ -3,7 +3,7 @@ import io.gatling.core.Predef._
 import io.gatling.http.Predef._
 import scala.concurrent.duration._
 
-class BasicSimulation extends Simulation {
+class TestSimulation extends Simulation {
   val userCount = Integer.getInteger("users", 1)
   val durationInSeconds  = java.lang.Long.getLong("duration", 10L)
 
