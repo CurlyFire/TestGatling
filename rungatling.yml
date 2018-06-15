@@ -27,3 +27,4 @@
       state: started
       cleanup: true
       detach: false
+      volumes: "/tmp/gatling/results:/opt/gatling/results"
