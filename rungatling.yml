@@ -32,4 +32,4 @@
 
   - name: Message du conteneur
     debug:
-      msg: "{{ dockerexec.Output }}"
+      msg: "{{ dockerexec }}"
