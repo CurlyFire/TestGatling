@@ -27,8 +27,9 @@
       state: started
       volumes: "/tmp/gatling/results:/opt/gatling/results"
       command: "-s computerdatabase.TestSimulation"
+      detached: false
     register: dockerexec
 
   - name: Message du conteneur
     debug:
-      msg: "{{ dockerexec['Output'] }}"
+      msg: "{{ dockerexec.Output }}"
