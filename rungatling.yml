@@ -28,7 +28,7 @@
       volumes: 
         - "/tmp/gatling/results:/opt/gatling/results"
         #Inclus le fichier de scala - "tmp/gatling/user-files:/opt/gatling/user-files"
-      command: "-s computerdatabase.BasicSimulation"
+      command: "-s computerdatabase.TestSimulation"
       user: 995
       detach: false
     register: dockerexec
