@@ -27,8 +27,8 @@
       state: started
       volumes: 
         - "/tmp/gatling/results:/opt/gatling/results"
-        - "{{workspace_dir}}/user-files:/opt/gatling/user-files"
-      command: "-s computerdatabase.TestSimulation"
+        #Inclus le fichier de scala - "tmp/gatling/user-files:/opt/gatling/user-files"
+      command: "-s computerdatabase.BasicSimulation"
       user: 995
       detach: false
     register: dockerexec
@@ -41,4 +41,10 @@
     synchronize:
       mode: pull
       src: /tmp/gatling/results
-      dest: "{{workspace_dir}}/results"
+      dest: "{{workspace_dir}}"
+
+  - name: Clean
+    file:
+      state: absent
+      path: /tmp/gatling
+      
