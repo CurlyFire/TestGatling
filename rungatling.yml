@@ -39,4 +39,4 @@
   synchronize:
     mode: pull
     src: /tmp/gatling/results
-    dest: {{workspace_dir}}/results
+    dest: "{{workspace_dir}}/results"
