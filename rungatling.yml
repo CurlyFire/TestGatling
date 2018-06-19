@@ -25,8 +25,8 @@
       name: "containertestgatling"
       image: "nexus3.inspq.qc.ca:5000/inspq/testgatling"
       state: started
+      volumes: "/tmp/gatling/results:/opt/gatling/results"
       command: "-s computerdatabase.TestSimulation"
-      user: 995
       detach: false
     register: dockerexec
 
