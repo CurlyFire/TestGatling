@@ -27,9 +27,16 @@
       state: started
       volumes: "/tmp/gatling/results:/opt/gatling/results"
       command: "-s computerdatabase.TestSimulation"
+      user: 995
       detach: false
     register: dockerexec
 
   - name: Message du conteneur
     debug:
       msg: "{{ dockerexec }}"
+
+- name: Synchronization
+  synchronize:
+    mode: pull
+    src: /tmp/gatling/results
+    dest: {{workspace_dir}}/results
