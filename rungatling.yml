@@ -35,8 +35,8 @@
     debug:
       msg: "{{ dockerexec }}"
 
-- name: Synchronization
-  synchronize:
-    mode: pull
-    src: /tmp/gatling/results
-    dest: "{{workspace_dir}}/results"
+  - name: Synchronization
+    synchronize:
+      mode: pull
+      src: /tmp/gatling/results
+      dest: "{{workspace_dir}}/results"
